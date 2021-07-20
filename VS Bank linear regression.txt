@@ -1,0 +1,2265 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SASReport xmlns="http://www.sas.com/sasreportmodel/bird-4.5.0" label="VS Bank linear regression" createdLocale="en" createdVersion="4.5.0" dateCreated="2021-07-13T10:43:19Z" dateModified="2021-07-13T10:43:19Z" createdApplication="SAS Visual Analytics 2020" lastModifiedApplication="SAS Visual Analytics 2020" nextUniqueNameIndex="1985">
+	<DataDefinitions>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds7" name="dd75">
+			<BusinessItems>
+				<RelationalDataItem name="bi670" base="bi61"/>
+				<RelationalDataItem name="bi682" base="bi35"/>
+				<RelationalDataItem name="bi683" base="bi36"/>
+				<RelationalDataItem name="bi684" base="bi37"/>
+				<RelationalDataItem name="bi685" base="bi38"/>
+				<RelationalDataItem name="bi686" base="bi39"/>
+				<RelationalDataItem name="bi687" base="bi40"/>
+				<RelationalDataItem name="bi688" base="bi41"/>
+				<RelationalDataItem name="bi689" base="bi42"/>
+				<RelationalDataItem name="bi690" base="bi43"/>
+				<RelationalDataItem name="bi691" base="bi44"/>
+				<RelationalDataItem name="bi692" base="bi45"/>
+				<RelationalDataItem name="bi693" base="bi46"/>
+				<RelationalDataItem name="bi727" base="bi9"/>
+				<RelationalDataItem name="bi728" base="bi10"/>
+				<RelationalFilterItem name="bi849">
+					<EditorProperties>
+						<Property key="complexity">SINGLE_DATA_ITEM</Property>
+						<Property key="interactiveEditingAllowed">FALSE</Property>
+					</EditorProperties>
+					<Expression>or(between(${bi670,raw},2000,50000),ismissing(${bi670,raw}))</Expression>
+				</RelationalFilterItem>
+				<SyntheticItems name="si78">
+					<Item purpose="countUsed" name="bi79"/>
+					<Item purpose="largestCountUsed" name="bi80"/>
+					<Item purpose="countUsedLabel" name="bi81"/>
+					<Item purpose="countUnused" name="bi82"/>
+					<Item purpose="countUnusedLabel" name="bi83"/>
+					<Item purpose="countExcluded" name="bi84"/>
+					<Item purpose="dependentVariableLabel" name="bi85"/>
+					<Item purpose="selectedStatisticValue" name="bi86"/>
+					<Item purpose="selectedStatisticLabel" name="bi87"/>
+					<Item purpose="eventLabel" name="bi88"/>
+					<Item purpose="eventString" name="bi89"/>
+					<Item purpose="targetIsBinary" name="bi90"/>
+				</SyntheticItems>
+				<SyntheticItems name="si91">
+					<Item purpose="effect" name="bi92"/>
+					<Item purpose="uniqueEffect" name="bi93"/>
+					<Item purpose="dataSourceName" name="bi94"/>
+					<Item purpose="pValue" name="bi95" format="NLPVALUE10.5"/>
+					<Item purpose="pValueFormatted" name="bi96"/>
+					<Item purpose="negativeLogPValue" name="bi97" format="NILPVALUE10.5"/>
+					<Item purpose="negativeLogPValueFormatted" name="bi98"/>
+				</SyntheticItems>
+				<SyntheticItems name="si99">
+					<Item purpose="count" name="bi100"/>
+					<Item purpose="percent" name="bi101"/>
+					<Item purpose="midpoint" name="bi102" format="NILPVALUE10.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si114">
+					<Item purpose="purpose" name="bi115"/>
+					<Item purpose="xref" name="bi116"/>
+					<Item purpose="usage" name="bi117"/>
+				</SyntheticItems>
+				<SyntheticItems name="si118">
+					<Item purpose="scoreCode" name="bi119"/>
+					<Item purpose="exportCodePrepend" name="bi120"/>
+					<Item purpose="exportCodeAppend" name="bi121"/>
+					<Item purpose="derivedCodePrepend" name="bi122"/>
+					<Item purpose="derivedCodeAppend" name="bi123"/>
+				</SyntheticItems>
+				<SyntheticItems name="si124">
+					<Item purpose="purpose" name="bi125"/>
+					<Item purpose="xref" name="bi126"/>
+					<Item purpose="usage" name="bi127"/>
+					<Item purpose="stringLength" name="bi128"/>
+					<Item purpose="level" name="bi129"/>
+				</SyntheticItems>
+				<SyntheticItems name="si130">
+					<Item purpose="xref" name="bi131"/>
+				</SyntheticItems>
+				<SyntheticItems name="si178">
+					<Item purpose="source" name="bi179"/>
+					<Item purpose="df" name="bi180"/>
+					<Item purpose="ss" name="bi181"/>
+					<Item purpose="ms" name="bi182"/>
+					<Item purpose="fValue" name="bi183"/>
+					<Item purpose="probF" name="bi184" format="NLPVALUE14.5"/>
+					<Item purpose="rSquare" name="bi185"/>
+				</SyntheticItems>
+				<SyntheticItems name="si186">
+					<Item purpose="description" name="bi187"/>
+					<Item purpose="valueFormatted" name="bi188"/>
+				</SyntheticItems>
+				<SyntheticItems name="si189">
+					<Item purpose="description" name="bi190"/>
+					<Item purpose="valueFormatted" name="bi191"/>
+				</SyntheticItems>
+				<SyntheticItems name="si192">
+					<Item purpose="effectLabel" name="bi193"/>
+					<Item purpose="df" name="bi194"/>
+					<Item purpose="ss" name="bi195"/>
+					<Item purpose="ms" name="bi196"/>
+					<Item purpose="fValue" name="bi197"/>
+					<Item purpose="probF" name="bi198" format="NLPVALUE14.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si199">
+					<Item purpose="effectLabel" name="bi200"/>
+					<Item purpose="numDf" name="bi201"/>
+					<Item purpose="denDf" name="bi202"/>
+					<Item purpose="fValue" name="bi203"/>
+					<Item purpose="probF" name="bi204" format="NLPVALUE14.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si205">
+					<Item purpose="effectLabel" name="bi206"/>
+					<Item purpose="estimate" name="bi207"/>
+					<Item purpose="standardErrorStatistic" name="bi208"/>
+					<Item purpose="tStatistic" name="bi209"/>
+					<Item purpose="probT" name="bi210" format="NLPVALUE14.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si132">
+					<Item purpose="description" name="bi133"/>
+					<Item purpose="value" name="bi134"/>
+				</SyntheticItems>
+				<SyntheticItems name="si135">
+					<Item purpose="control" name="bi136"/>
+					<Item purpose="step" name="bi137"/>
+					<Item purpose="description" name="bi138"/>
+					<Item purpose="numInModel" name="bi139"/>
+					<Item purpose="lambda" name="bi140"/>
+					<Item purpose="effectEntered" name="bi141"/>
+					<Item purpose="effectRemoved" name="bi142"/>
+					<Item purpose="effect" name="bi143"/>
+					<Item purpose="numberOfEffects" name="bi144"/>
+					<Item purpose="significanceLevel" name="bi145"/>
+					<Item purpose="optimalPValue" name="bi146"/>
+					<Item purpose="aic" name="bi147"/>
+					<Item purpose="optionalAic" name="bi148"/>
+					<Item purpose="aicc" name="bi149"/>
+					<Item purpose="optionalAicc" name="bi150"/>
+					<Item purpose="sbc" name="bi151"/>
+					<Item purpose="optionalSbc" name="bi152"/>
+					<Item purpose="validate" name="bi153"/>
+					<Item purpose="optionalValidate" name="bi154"/>
+					<Item purpose="groupKey" name="bi155"/>
+				</SyntheticItems>
+				<SyntheticItems name="si156">
+					<Item purpose="effect" name="bi157"/>
+					<Item purpose="uniqueEffect" name="bi158"/>
+					<Item purpose="dataSourceName" name="bi159"/>
+					<Item purpose="magnitude" name="bi160"/>
+					<Item purpose="value" name="bi161"/>
+					<Item purpose="xref" name="bi162"/>
+				</SyntheticItems>
+				<SyntheticItems name="si163">
+					<Item purpose="count" name="bi164"/>
+					<Item purpose="percent" name="bi165"/>
+					<Item purpose="lowerBound" name="bi166"/>
+					<Item purpose="midpoint" name="bi167"/>
+					<Item purpose="upperBound" name="bi168"/>
+				</SyntheticItems>
+				<SyntheticItems name="si169">
+					<Item purpose="groupKey" name="bi170"/>
+					<Item purpose="effect" name="bi171"/>
+					<Item purpose="uniqueEffect" name="bi172"/>
+					<Item purpose="magnitude" name="bi173"/>
+					<Item purpose="value" name="bi174"/>
+				</SyntheticItems>
+				<SyntheticItems name="si175">
+					<Item purpose="lowerBound" name="bi176"/>
+					<Item purpose="upperBound" name="bi177"/>
+				</SyntheticItems>
+			</BusinessItems>
+			<DataDefinition dataSource="ds7" type="procedural" name="dd76">
+				<ProceduralQuery type="linearRegression" scoreCodeNumber="77">
+					<GeneratedResources>
+						<GeneratedData purpose="model" name="ge212"/>
+						<GeneratedTable purpose="scoredTable" name="ge211"/>
+					</GeneratedResources>
+					<Arguments>
+						<Argument purpose="dependentVariable">
+							<ReferenceValue>bi670</ReferenceValue>
+						</Argument>
+						<ListArgument purpose="continuousVariables">
+							<ReferenceValue>bi682</ReferenceValue>
+							<ReferenceValue>bi683</ReferenceValue>
+							<ReferenceValue>bi684</ReferenceValue>
+							<ReferenceValue>bi685</ReferenceValue>
+							<ReferenceValue>bi686</ReferenceValue>
+							<ReferenceValue>bi687</ReferenceValue>
+							<ReferenceValue>bi688</ReferenceValue>
+							<ReferenceValue>bi689</ReferenceValue>
+							<ReferenceValue>bi690</ReferenceValue>
+							<ReferenceValue>bi691</ReferenceValue>
+							<ReferenceValue>bi692</ReferenceValue>
+							<ReferenceValue>bi693</ReferenceValue>
+						</ListArgument>
+						<ListArgument purpose="classificationVariables">
+							<ReferenceValue>bi727</ReferenceValue>
+							<ReferenceValue>bi728</ReferenceValue>
+						</ListArgument>
+						<ListArgument purpose="interactionVariables">
+							<ReferenceValue>bi834</ReferenceValue>
+						</ListArgument>
+						<Argument purpose="selectedStatistic">
+							<StringValue>rootMse</StringValue>
+						</Argument>
+						<Argument purpose="usesPartition">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="informativeMissingness">
+							<BooleanValue>true</BooleanValue>
+						</Argument>
+						<Argument purpose="pValuePrecision">
+							<DoubleValue>5.0</DoubleValue>
+						</Argument>
+						<Argument purpose="useVariableSelection">
+							<BooleanValue>true</BooleanValue>
+						</Argument>
+						<Argument purpose="variableSelectionType">
+							<StringValue>backward</StringValue>
+						</Argument>
+						<Argument purpose="variableSelectionCriterion">
+							<StringValue>sl</StringValue>
+						</Argument>
+						<Argument purpose="significanceLevel">
+							<DoubleValue>0.01</DoubleValue>
+						</Argument>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd213" syntheticItems="si78"/>
+					<ResultDefinition purpose="pValueEffect" name="dd214" syntheticItems="si91"/>
+					<ResultDefinition purpose="pValueCount" name="dd215" syntheticItems="si99"/>
+					<ResultDefinition purpose="generatedXrefs" name="dd216" syntheticItems="si114"/>
+					<ResultDefinition purpose="scoreCode" name="dd217" syntheticItems="si118"/>
+					<ResultDefinition purpose="scoreCodeNewColumns" name="dd218" syntheticItems="si124"/>
+					<ResultDefinition purpose="scoreCodeXrefs" name="dd219" syntheticItems="si130"/>
+					<ResultDefinition purpose="overallAnova" name="dd220" syntheticItems="si178"/>
+					<ResultDefinition purpose="dimensions" name="dd221" syntheticItems="si186"/>
+					<ResultDefinition purpose="fitStatistics" name="dd222" syntheticItems="si189"/>
+					<ResultDefinition purpose="modelAnova" name="dd223" syntheticItems="si192"/>
+					<ResultDefinition purpose="tests3" name="dd224" syntheticItems="si199"/>
+					<ResultDefinition purpose="parameterEstimates" name="dd225" syntheticItems="si205"/>
+					<ResultDefinition purpose="selectionInfo" name="dd226" syntheticItems="si132"/>
+					<ResultDefinition purpose="selectionSummary" name="dd227" syntheticItems="si135"/>
+					<ResultDefinition purpose="estimateEffect" name="dd228" syntheticItems="si156"/>
+					<ResultDefinition purpose="estimateCount" name="dd229" syntheticItems="si163"/>
+					<ResultDefinition purpose="groupEstimates" name="dd230" syntheticItems="si169"/>
+					<ResultDefinition purpose="estimateValueRange" name="dd231" syntheticItems="si175"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters>
+				<DetailFilters>
+					<BusinessItem ref="bi849"/>
+				</DetailFilters>
+			</AppliedFilters>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds743" name="dd257">
+			<BusinessItems>
+				<RelationalDataItem name="bi774" base="bi744"/>
+				<RelationalDataItem name="bi779" base="bi746"/>
+				<RelationalDataItem name="bi776" base="bi754"/>
+				<RelationalDataItem name="bi775" base="bi747"/>
+				<RelationalDataItem name="bi778" base="bi745"/>
+				<RelationalDataItem name="bi780" base="bi749"/>
+				<RelationalDataItem name="bi781" base="bi750"/>
+				<RelationalDataItem name="bi782" base="bi752"/>
+				<RelationalDataItem name="bi783" base="bi751"/>
+				<RelationalDataItem name="bi784" base="bi748"/>
+				<RelationalDataItem name="bi785" base="bi753"/>
+				<RelationalDataItem name="bi786" base="bi9"/>
+				<RelationalDataItem name="bi787" base="bi10"/>
+				<RelationalDataItem name="bi788" base="bi35"/>
+				<RelationalDataItem name="bi789" base="bi36"/>
+				<RelationalDataItem name="bi790" base="bi37"/>
+				<RelationalDataItem name="bi791" base="bi38"/>
+				<RelationalDataItem name="bi792" base="bi39"/>
+				<RelationalDataItem name="bi793" base="bi40"/>
+				<RelationalDataItem name="bi794" base="bi41"/>
+				<RelationalDataItem name="bi795" base="bi42"/>
+				<RelationalDataItem name="bi796" base="bi43"/>
+				<RelationalDataItem name="bi797" base="bi44"/>
+				<RelationalDataItem name="bi798" base="bi45"/>
+				<RelationalDataItem name="bi799" base="bi46"/>
+				<RelationalFilterItem systemGenerated="true" name="bi800">
+					<EditorProperties>
+						<Property key="complexity">SINGLE_DATA_ITEM</Property>
+						<Property key="interactiveEditingAllowed">FALSE</Property>
+					</EditorProperties>
+					<Expression>ne(${bi776,binned},0)</Expression>
+				</RelationalFilterItem>
+				<RelationalDataItem name="bi801" base="bi62"/>
+				<SyntheticDataItem name="bi802"/>
+				<SyntheticDataItem name="bi803"/>
+				<SyntheticDataItem name="bi804"/>
+				<SyntheticDataItem name="bi805"/>
+				<SyntheticDataItem name="bi770"/>
+				<SyntheticDataItem name="bi771"/>
+				<SyntheticDataItem name="bi772"/>
+				<SyntheticDataItem name="bi773"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds743" type="procedural" name="dd258">
+				<ProceduralQuery type="heatMap">
+					<Arguments>
+						<Argument purpose="aggregatedMeasure">
+							<ReferenceValue>bi801</ReferenceValue>
+						</Argument>
+						<ArgumentGroup group="column">
+							<Argument purpose="inputVariable">
+								<ReferenceValue>bi774</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi802</ReferenceValue>
+							</Argument>
+							<Argument purpose="upperBound">
+								<ReferenceValue>bi803</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+						<ArgumentGroup group="row">
+							<Argument purpose="inputVariable">
+								<ReferenceValue>bi779</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi804</ReferenceValue>
+							</Argument>
+							<Argument purpose="upperBound">
+								<ReferenceValue>bi805</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+						<ArgumentGroup group="variableOutputInfo">
+							<Argument purpose="variableName">
+								<ReferenceValue>bi770</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi771</ReferenceValue>
+							</Argument>
+							<Argument purpose="binWidth">
+								<ReferenceValue>bi772</ReferenceValue>
+							</Argument>
+							<Argument purpose="binCount">
+								<ReferenceValue>bi773</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd768"/>
+					<ResultDefinition purpose="variableOutputInfo" name="dd769"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters>
+				<DetailFilters>
+					<BusinessItem ref="bi800"/>
+				</DetailFilters>
+			</AppliedFilters>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds743" name="dd262">
+			<BusinessItems>
+				<RelationalDataItem name="bi836" base="bi744"/>
+				<RelationalDataItem name="bi835" base="bi61"/>
+				<SyntheticItems name="si265">
+					<Item purpose="percentile" name="bi266"/>
+					<Item purpose="observationCount" name="bi267"/>
+					<Item purpose="predictedMean" name="bi268"/>
+					<Item purpose="targetMean" name="bi269"/>
+					<Item purpose="partition" name="bi270"/>
+				</SyntheticItems>
+				<SyntheticItems name="si343">
+					<Item purpose="ase" name="bi344"/>
+					<Item purpose="aseLabel" name="bi345"/>
+					<Item purpose="validateAse" name="bi346"/>
+					<Item purpose="validateAseLabel" name="bi347"/>
+					<Item purpose="testAse" name="bi348"/>
+					<Item purpose="testAseLabel" name="bi349"/>
+					<Item purpose="ks" name="bi350"/>
+					<Item purpose="ksLabel" name="bi351"/>
+					<Item purpose="validateKs" name="bi352"/>
+					<Item purpose="validateKsLabel" name="bi353"/>
+					<Item purpose="testKs" name="bi354"/>
+					<Item purpose="testKsLabel" name="bi355"/>
+					<Item purpose="misclassificationEventless" name="bi356"/>
+					<Item purpose="misclassificationEventlessLabel" name="bi357"/>
+					<Item purpose="validateMisclassificationEventless" name="bi358"/>
+					<Item purpose="validateMisclassificationEventlessLabel" name="bi359"/>
+					<Item purpose="testMisclassificationEventless" name="bi360"/>
+					<Item purpose="testMisclassificationEventlessLabel" name="bi361"/>
+					<Item purpose="misclassification" name="bi362"/>
+					<Item purpose="misclassificationLabel" name="bi363"/>
+					<Item purpose="validateMisclassification" name="bi364"/>
+					<Item purpose="validateMisclassificationLabel" name="bi365"/>
+					<Item purpose="testMisclassification" name="bi366"/>
+					<Item purpose="testMisclassificationLabel" name="bi367"/>
+					<Item purpose="countUsed" name="bi368"/>
+					<Item purpose="countUsedLabel" name="bi369"/>
+					<Item purpose="countUnused" name="bi370"/>
+					<Item purpose="countUnusedLabel" name="bi371"/>
+					<Item purpose="dependentVariableLabel" name="bi372"/>
+					<Item purpose="eventLabel" name="bi373"/>
+					<Item purpose="eventString" name="bi374"/>
+					<Item purpose="countUsedValidate" name="bi375"/>
+					<Item purpose="countUnusedValidate" name="bi376"/>
+					<Item purpose="countUsedTrain" name="bi377"/>
+					<Item purpose="countUnusedTrain" name="bi378"/>
+					<Item purpose="countUsedTest" name="bi379"/>
+					<Item purpose="countUnusedTest" name="bi380"/>
+					<Item purpose="observedAverage" name="bi528"/>
+					<Item purpose="observedAverageLabel" name="bi529"/>
+					<Item purpose="predictedAverage" name="bi530"/>
+					<Item purpose="predictedAverageLabel" name="bi531"/>
+					<Item purpose="sse" name="bi532"/>
+					<Item purpose="sseLabel" name="bi533"/>
+					<Item purpose="sseWeighted" name="bi534"/>
+					<Item purpose="sseWeightedLabel" name="bi535"/>
+					<Item purpose="cStatistic" name="bi536"/>
+					<Item purpose="cStatisticLabel" name="bi537"/>
+					<Item purpose="fpr" name="bi538"/>
+					<Item purpose="fprLabel" name="bi539"/>
+					<Item purpose="fdr" name="bi540"/>
+					<Item purpose="fdrLabel" name="bi541"/>
+					<Item purpose="f1Score" name="bi542"/>
+					<Item purpose="f1ScoreLabel" name="bi543"/>
+					<Item purpose="lift" name="bi544"/>
+					<Item purpose="liftLabel" name="bi545"/>
+					<Item purpose="cumulativeLift" name="bi546"/>
+					<Item purpose="cumulativeLiftLabel" name="bi547"/>
+					<Item purpose="cumulativePercentResponse" name="bi548"/>
+					<Item purpose="cumulativePercentResponseLabel" name="bi549"/>
+					<Item purpose="cumulativeResponse" name="bi550"/>
+					<Item purpose="cumulativeResponseLabel" name="bi551"/>
+					<Item purpose="gain" name="bi552"/>
+					<Item purpose="gainLabel" name="bi553"/>
+					<Item purpose="gini" name="bi554"/>
+					<Item purpose="giniLabel" name="bi555"/>
+					<Item purpose="gamma" name="bi556"/>
+					<Item purpose="gammaLabel" name="bi557"/>
+					<Item purpose="tau" name="bi558"/>
+					<Item purpose="tauLabel" name="bi559"/>
+					<Item purpose="validateObservedAverage" name="bi576"/>
+					<Item purpose="validateObservedAverageLabel" name="bi577"/>
+					<Item purpose="testObservedAverage" name="bi578"/>
+					<Item purpose="testObservedAverageLabel" name="bi579"/>
+					<Item purpose="validatePredictedAverage" name="bi580"/>
+					<Item purpose="validatePredictedAverageLabel" name="bi581"/>
+					<Item purpose="testPredictedAverage" name="bi582"/>
+					<Item purpose="testPredictedAverageLabel" name="bi583"/>
+					<Item purpose="validateCStatistic" name="bi584"/>
+					<Item purpose="validateCStatisticLabel" name="bi585"/>
+					<Item purpose="testCStatistic" name="bi586"/>
+					<Item purpose="testCStatisticLabel" name="bi587"/>
+					<Item purpose="validateFpr" name="bi588"/>
+					<Item purpose="validateFprLabel" name="bi589"/>
+					<Item purpose="testFpr" name="bi590"/>
+					<Item purpose="testFprLabel" name="bi591"/>
+					<Item purpose="validateFdr" name="bi592"/>
+					<Item purpose="validateFdrLabel" name="bi593"/>
+					<Item purpose="testFdr" name="bi594"/>
+					<Item purpose="testFdrLabel" name="bi595"/>
+					<Item purpose="validateF1Score" name="bi596"/>
+					<Item purpose="validateF1ScoreLabel" name="bi597"/>
+					<Item purpose="testF1Score" name="bi598"/>
+					<Item purpose="testF1ScoreLabel" name="bi599"/>
+					<Item purpose="validateLift" name="bi600"/>
+					<Item purpose="validateLiftLabel" name="bi601"/>
+					<Item purpose="testLift" name="bi602"/>
+					<Item purpose="testLiftLabel" name="bi603"/>
+					<Item purpose="validateCumulativeLift" name="bi604"/>
+					<Item purpose="validateCumulativeLiftLabel" name="bi605"/>
+					<Item purpose="testCumulativeLift" name="bi606"/>
+					<Item purpose="testCumulativeLiftLabel" name="bi607"/>
+					<Item purpose="validateCumulativePercentResponse" name="bi608"/>
+					<Item purpose="validateCumulativePercentResponseLabel" name="bi609"/>
+					<Item purpose="testCumulativePercentResponse" name="bi610"/>
+					<Item purpose="testCumulativePercentResponseLabel" name="bi611"/>
+					<Item purpose="validateCumulativeResponse" name="bi612"/>
+					<Item purpose="validateCumulativeResponseLabel" name="bi613"/>
+					<Item purpose="testCumulativeResponse" name="bi614"/>
+					<Item purpose="testCumulativeResponseLabel" name="bi615"/>
+					<Item purpose="validateGain" name="bi616"/>
+					<Item purpose="validateGainLabel" name="bi617"/>
+					<Item purpose="testGain" name="bi618"/>
+					<Item purpose="testGainLabel" name="bi619"/>
+					<Item purpose="validateGini" name="bi620"/>
+					<Item purpose="validateGiniLabel" name="bi621"/>
+					<Item purpose="testGini" name="bi622"/>
+					<Item purpose="testGiniLabel" name="bi623"/>
+					<Item purpose="validateGamma" name="bi624"/>
+					<Item purpose="validateGammaLabel" name="bi625"/>
+					<Item purpose="testGamma" name="bi626"/>
+					<Item purpose="testGammaLabel" name="bi627"/>
+					<Item purpose="validateTau" name="bi628"/>
+					<Item purpose="validateTauLabel" name="bi629"/>
+					<Item purpose="testTau" name="bi630"/>
+					<Item purpose="testTauLabel" name="bi631"/>
+					<Item purpose="aic" name="bi632"/>
+					<Item purpose="aicLabel" name="bi633"/>
+					<Item purpose="aicc" name="bi634"/>
+					<Item purpose="aiccLabel" name="bi635"/>
+					<Item purpose="adjustedRSquare" name="bi636"/>
+					<Item purpose="adjustedRSquareLabel" name="bi637"/>
+					<Item purpose="fValue" name="bi638"/>
+					<Item purpose="fValueLabel" name="bi639"/>
+					<Item purpose="rSquare" name="bi640"/>
+					<Item purpose="rSquareLabel" name="bi641"/>
+					<Item purpose="mse" name="bi642"/>
+					<Item purpose="mseLabel" name="bi643"/>
+					<Item purpose="rootMse" name="bi644"/>
+					<Item purpose="rootMseLabel" name="bi645"/>
+					<Item purpose="sbc" name="bi646"/>
+					<Item purpose="sbcLabel" name="bi647"/>
+				</SyntheticItems>
+				<SyntheticItems name="si381">
+					<Item purpose="partition" name="bi382"/>
+					<Item purpose="ase" name="bi383"/>
+					<Item purpose="ks" name="bi384"/>
+					<Item purpose="misclassificationEventless" name="bi385"/>
+					<Item purpose="misclassification" name="bi386"/>
+					<Item purpose="countUsed" name="bi387"/>
+					<Item purpose="countUnused" name="bi388"/>
+					<Item purpose="observedAverage" name="bi560"/>
+					<Item purpose="predictedAverage" name="bi561"/>
+					<Item purpose="sse" name="bi562"/>
+					<Item purpose="sseWeighted" name="bi563"/>
+					<Item purpose="cStatistic" name="bi564"/>
+					<Item purpose="fpr" name="bi565"/>
+					<Item purpose="fdr" name="bi566"/>
+					<Item purpose="f1Score" name="bi567"/>
+					<Item purpose="lift" name="bi568"/>
+					<Item purpose="cumulativeLift" name="bi569"/>
+					<Item purpose="cumulativePercentResponse" name="bi570"/>
+					<Item purpose="cumulativeResponse" name="bi571"/>
+					<Item purpose="gain" name="bi572"/>
+					<Item purpose="gini" name="bi573"/>
+					<Item purpose="gamma" name="bi574"/>
+					<Item purpose="tau" name="bi575"/>
+					<Item purpose="aic" name="bi648"/>
+					<Item purpose="aicc" name="bi649"/>
+					<Item purpose="adjustedRSquare" name="bi650"/>
+					<Item purpose="fValue" name="bi651"/>
+					<Item purpose="rSquare" name="bi652"/>
+					<Item purpose="mse" name="bi653"/>
+					<Item purpose="rootMse" name="bi654"/>
+					<Item purpose="sbc" name="bi655"/>
+				</SyntheticItems>
+				<SyntheticItems name="si511">
+					<Item purpose="label" name="bi512"/>
+					<Item purpose="uniqueLabel" name="bi513"/>
+					<Item purpose="dataSourceName" name="bi514"/>
+					<Item purpose="importance" name="bi515"/>
+					<Item purpose="standardDeviation" name="bi516"/>
+				</SyntheticItems>
+				<SyntheticItems name="si524">
+					<Item purpose="label" name="bi525"/>
+					<Item purpose="textSummary" name="bi526"/>
+					<Item purpose="assessmentSummaryConstant" name="bi527"/>
+				</SyntheticItems>
+				<SyntheticItems name="si517">
+					<Item purpose="measureAssessmentSummary" name="bi518"/>
+					<Item purpose="cumulativeLiftAssessmentSummary" name="bi519"/>
+					<Item purpose="liftAssessmentSummary" name="bi520"/>
+					<Item purpose="rocAssessmentSummary" name="bi521"/>
+					<Item purpose="misclassificationAssessmentSummary" name="bi522"/>
+					<Item purpose="confusionMatrixAssessmentSummary" name="bi523"/>
+				</SyntheticItems>
+			</BusinessItems>
+			<DataDefinition dataSource="ds743" type="procedural" name="dd263">
+				<ProceduralQuery type="assessment" scoreCodeNumber="264">
+					<ReferenceResources>
+						<ReferenceData resource="ge212" generator="dd76" purpose="model"/>
+					</ReferenceResources>
+					<Arguments>
+						<Argument purpose="dependentVariable">
+							<ReferenceValue>bi835</ReferenceValue>
+						</Argument>
+						<Argument purpose="predictedVariable">
+							<ReferenceValue>bi836</ReferenceValue>
+						</Argument>
+						<Argument purpose="usesPartition">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="binCount">
+							<IntValue>20</IntValue>
+						</Argument>
+						<Argument purpose="maxIterationCount">
+							<IntValue>50</IntValue>
+						</Argument>
+						<Argument purpose="threshold">
+							<DoubleValue>1.0E-10</DoubleValue>
+						</Argument>
+						<Argument purpose="excludeMissing">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="cutOff">
+							<DoubleValue>0.5</DoubleValue>
+						</Argument>
+						<Argument purpose="fitModelPercentage">
+							<DoubleValue>0.05</DoubleValue>
+						</Argument>
+						<Argument purpose="filterModel">
+							<StringValue>fitModel</StringValue>
+						</Argument>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd656" syntheticItems="si265"/>
+					<ResultDefinition purpose="fitStatistics" name="dd657" syntheticItems="si343"/>
+					<ResultDefinition purpose="fitStatisticsTall" name="dd658" syntheticItems="si381"/>
+					<ResultDefinition purpose="relativeImportance" name="dd659" syntheticItems="si511"/>
+					<ResultDefinition purpose="assessmentSummaryDisplay" name="dd660" syntheticItems="si524"/>
+					<ResultDefinition purpose="assessmentSummaryRow" name="dd661" syntheticItems="si517"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds7" name="dd872">
+			<BusinessItems>
+				<RelationalDataItem name="bi1431" base="bi61"/>
+				<RelationalDataItem name="bi1432" base="bi35"/>
+				<RelationalDataItem name="bi1433" base="bi36"/>
+				<RelationalDataItem name="bi1434" base="bi37"/>
+				<RelationalDataItem name="bi1435" base="bi38"/>
+				<RelationalDataItem name="bi1436" base="bi39"/>
+				<RelationalDataItem name="bi1437" base="bi40"/>
+				<RelationalDataItem name="bi1438" base="bi41"/>
+				<RelationalDataItem name="bi1439" base="bi42"/>
+				<RelationalDataItem name="bi1440" base="bi43"/>
+				<RelationalDataItem name="bi1441" base="bi44"/>
+				<RelationalDataItem name="bi1442" base="bi45"/>
+				<RelationalDataItem name="bi1443" base="bi46"/>
+				<RelationalDataItem name="bi1444" base="bi9"/>
+				<RelationalDataItem name="bi1445" base="bi10"/>
+				<SyntheticItems name="si875">
+					<Item purpose="countUsed" name="bi876"/>
+					<Item purpose="largestCountUsed" name="bi877"/>
+					<Item purpose="countUsedLabel" name="bi878"/>
+					<Item purpose="countUnused" name="bi879"/>
+					<Item purpose="countUnusedLabel" name="bi880"/>
+					<Item purpose="countExcluded" name="bi881"/>
+					<Item purpose="dependentVariableLabel" name="bi882"/>
+					<Item purpose="selectedStatisticValue" name="bi883"/>
+					<Item purpose="selectedStatisticLabel" name="bi884"/>
+					<Item purpose="eventLabel" name="bi885"/>
+					<Item purpose="eventString" name="bi886"/>
+					<Item purpose="targetIsBinary" name="bi887"/>
+				</SyntheticItems>
+				<SyntheticItems name="si888">
+					<Item purpose="effect" name="bi889"/>
+					<Item purpose="uniqueEffect" name="bi890"/>
+					<Item purpose="dataSourceName" name="bi891"/>
+					<Item purpose="pValue" name="bi892" format="NLPVALUE10.5"/>
+					<Item purpose="pValueFormatted" name="bi893"/>
+					<Item purpose="negativeLogPValue" name="bi894" format="NILPVALUE10.5"/>
+					<Item purpose="negativeLogPValueFormatted" name="bi895"/>
+				</SyntheticItems>
+				<SyntheticItems name="si896">
+					<Item purpose="count" name="bi897"/>
+					<Item purpose="percent" name="bi898"/>
+					<Item purpose="midpoint" name="bi899" format="NILPVALUE10.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si911">
+					<Item purpose="purpose" name="bi912"/>
+					<Item purpose="xref" name="bi913"/>
+					<Item purpose="usage" name="bi914"/>
+				</SyntheticItems>
+				<SyntheticItems name="si915">
+					<Item purpose="scoreCode" name="bi916"/>
+					<Item purpose="exportCodePrepend" name="bi917"/>
+					<Item purpose="exportCodeAppend" name="bi918"/>
+					<Item purpose="derivedCodePrepend" name="bi919"/>
+					<Item purpose="derivedCodeAppend" name="bi920"/>
+				</SyntheticItems>
+				<SyntheticItems name="si921">
+					<Item purpose="purpose" name="bi922"/>
+					<Item purpose="xref" name="bi923"/>
+					<Item purpose="usage" name="bi924"/>
+					<Item purpose="stringLength" name="bi925"/>
+					<Item purpose="level" name="bi926"/>
+				</SyntheticItems>
+				<SyntheticItems name="si927">
+					<Item purpose="xref" name="bi928"/>
+				</SyntheticItems>
+				<SyntheticItems name="si929">
+					<Item purpose="orderedValue" name="bi930"/>
+					<Item purpose="count" name="bi931"/>
+					<Item purpose="eventLabel" name="bi932"/>
+					<Item purpose="eventString" name="bi933"/>
+				</SyntheticItems>
+				<SyntheticItems name="si980">
+					<Item purpose="description" name="bi981"/>
+					<Item purpose="valueFormatted" name="bi982"/>
+				</SyntheticItems>
+				<SyntheticItems name="si983">
+					<Item purpose="iteration" name="bi984"/>
+					<Item purpose="evaluations" name="bi985"/>
+					<Item purpose="objective" name="bi986"/>
+					<Item purpose="change" name="bi987"/>
+					<Item purpose="maxGradient" name="bi988"/>
+				</SyntheticItems>
+				<SyntheticItems name="si989">
+					<Item purpose="reason" name="bi990"/>
+					<Item purpose="status" name="bi991"/>
+				</SyntheticItems>
+				<SyntheticItems name="si992">
+					<Item purpose="description" name="bi993"/>
+					<Item purpose="valueFormatted" name="bi994"/>
+				</SyntheticItems>
+				<SyntheticItems name="si995">
+					<Item purpose="effectLabel" name="bi996"/>
+					<Item purpose="numDf" name="bi997"/>
+					<Item purpose="chiSquare" name="bi998"/>
+					<Item purpose="probChiSquare" name="bi999" format="NLPVALUE14.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1000">
+					<Item purpose="effectLabel" name="bi1001"/>
+					<Item purpose="estimate" name="bi1002"/>
+					<Item purpose="standardErrorStatistic" name="bi1003"/>
+					<Item purpose="chiSquare" name="bi1004"/>
+					<Item purpose="probChiSquare" name="bi1005" format="NLPVALUE14.5"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1006">
+					<Item purpose="description" name="bi1007"/>
+					<Item purpose="value" name="bi1008"/>
+				</SyntheticItems>
+				<SyntheticItems name="si934">
+					<Item purpose="description" name="bi935"/>
+					<Item purpose="value" name="bi936"/>
+				</SyntheticItems>
+				<SyntheticItems name="si937">
+					<Item purpose="control" name="bi938"/>
+					<Item purpose="step" name="bi939"/>
+					<Item purpose="description" name="bi940"/>
+					<Item purpose="numInModel" name="bi941"/>
+					<Item purpose="lambda" name="bi942"/>
+					<Item purpose="effectEntered" name="bi943"/>
+					<Item purpose="effectRemoved" name="bi944"/>
+					<Item purpose="effect" name="bi945"/>
+					<Item purpose="numberOfEffects" name="bi946"/>
+					<Item purpose="significanceLevel" name="bi947"/>
+					<Item purpose="optimalPValue" name="bi948"/>
+					<Item purpose="aic" name="bi949"/>
+					<Item purpose="optionalAic" name="bi950"/>
+					<Item purpose="aicc" name="bi951"/>
+					<Item purpose="optionalAicc" name="bi952"/>
+					<Item purpose="sbc" name="bi953"/>
+					<Item purpose="optionalSbc" name="bi954"/>
+					<Item purpose="validate" name="bi955"/>
+					<Item purpose="optionalValidate" name="bi956"/>
+					<Item purpose="groupKey" name="bi957"/>
+				</SyntheticItems>
+				<SyntheticItems name="si958">
+					<Item purpose="effect" name="bi959"/>
+					<Item purpose="uniqueEffect" name="bi960"/>
+					<Item purpose="dataSourceName" name="bi961"/>
+					<Item purpose="magnitude" name="bi962"/>
+					<Item purpose="value" name="bi963"/>
+					<Item purpose="xref" name="bi964"/>
+				</SyntheticItems>
+				<SyntheticItems name="si965">
+					<Item purpose="count" name="bi966"/>
+					<Item purpose="percent" name="bi967"/>
+					<Item purpose="lowerBound" name="bi968"/>
+					<Item purpose="midpoint" name="bi969"/>
+					<Item purpose="upperBound" name="bi970"/>
+				</SyntheticItems>
+				<SyntheticItems name="si971">
+					<Item purpose="groupKey" name="bi972"/>
+					<Item purpose="effect" name="bi973"/>
+					<Item purpose="uniqueEffect" name="bi974"/>
+					<Item purpose="magnitude" name="bi975"/>
+					<Item purpose="value" name="bi976"/>
+				</SyntheticItems>
+				<SyntheticItems name="si977">
+					<Item purpose="lowerBound" name="bi978"/>
+					<Item purpose="upperBound" name="bi979"/>
+				</SyntheticItems>
+			</BusinessItems>
+			<DataDefinition dataSource="ds7" type="procedural" name="dd873">
+				<ProceduralQuery type="glm" scoreCodeNumber="874">
+					<GeneratedResources>
+						<GeneratedData purpose="model" name="ge1010"/>
+						<GeneratedTable purpose="scoredTable" name="ge1009"/>
+					</GeneratedResources>
+					<Arguments>
+						<Argument purpose="dependentVariable">
+							<ReferenceValue>bi1431</ReferenceValue>
+						</Argument>
+						<ListArgument purpose="continuousVariables">
+							<ReferenceValue>bi1432</ReferenceValue>
+							<ReferenceValue>bi1433</ReferenceValue>
+							<ReferenceValue>bi1434</ReferenceValue>
+							<ReferenceValue>bi1435</ReferenceValue>
+							<ReferenceValue>bi1436</ReferenceValue>
+							<ReferenceValue>bi1437</ReferenceValue>
+							<ReferenceValue>bi1438</ReferenceValue>
+							<ReferenceValue>bi1439</ReferenceValue>
+							<ReferenceValue>bi1440</ReferenceValue>
+							<ReferenceValue>bi1441</ReferenceValue>
+							<ReferenceValue>bi1442</ReferenceValue>
+							<ReferenceValue>bi1443</ReferenceValue>
+						</ListArgument>
+						<ListArgument purpose="classificationVariables">
+							<ReferenceValue>bi1444</ReferenceValue>
+							<ReferenceValue>bi1445</ReferenceValue>
+						</ListArgument>
+						<ListArgument purpose="interactionVariables">
+							<ReferenceValue>bi834</ReferenceValue>
+						</ListArgument>
+						<Argument purpose="selectedStatistic">
+							<StringValue>ase</StringValue>
+						</Argument>
+						<Argument purpose="usesPartition">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="linkFunction">
+							<StringValue>log</StringValue>
+						</Argument>
+						<Argument purpose="maximumIterations">
+							<DoubleValue>50.0</DoubleValue>
+						</Argument>
+						<Argument purpose="functionConvergence">
+							<DoubleValue>1.0E-6</DoubleValue>
+						</Argument>
+						<Argument purpose="gradientConvergence">
+							<DoubleValue>1.0E-6</DoubleValue>
+						</Argument>
+						<Argument purpose="cutOff">
+							<DoubleValue>0.5</DoubleValue>
+						</Argument>
+						<Argument purpose="eventDescending">
+							<BooleanValue>true</BooleanValue>
+						</Argument>
+						<Argument purpose="distribution">
+							<StringValue>normal</StringValue>
+						</Argument>
+						<Argument purpose="normalizeContinuousVariables">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="informativeMissingness">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="pValuePrecision">
+							<DoubleValue>5.0</DoubleValue>
+						</Argument>
+						<Argument purpose="useVariableSelection">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd1011" syntheticItems="si875"/>
+					<ResultDefinition purpose="pValueEffect" name="dd1012" syntheticItems="si888"/>
+					<ResultDefinition purpose="pValueCount" name="dd1013" syntheticItems="si896"/>
+					<ResultDefinition purpose="generatedXrefs" name="dd1014" syntheticItems="si911"/>
+					<ResultDefinition purpose="scoreCode" name="dd1015" syntheticItems="si915"/>
+					<ResultDefinition purpose="scoreCodeNewColumns" name="dd1016" syntheticItems="si921"/>
+					<ResultDefinition purpose="scoreCodeXrefs" name="dd1017" syntheticItems="si927"/>
+					<ResultDefinition purpose="responseProfile" name="dd1018" syntheticItems="si929"/>
+					<ResultDefinition purpose="dimensions" name="dd1019" syntheticItems="si980"/>
+					<ResultDefinition purpose="iterationHistory" name="dd1020" syntheticItems="si983"/>
+					<ResultDefinition purpose="convergence" name="dd1021" syntheticItems="si989"/>
+					<ResultDefinition purpose="fitStatistics" name="dd1022" syntheticItems="si992"/>
+					<ResultDefinition purpose="tests3" name="dd1023" syntheticItems="si995"/>
+					<ResultDefinition purpose="parameterEstimates" name="dd1024" syntheticItems="si1000"/>
+					<ResultDefinition purpose="modelInformation" name="dd1025" syntheticItems="si1006"/>
+					<ResultDefinition purpose="selectionInfo" name="dd1026" syntheticItems="si934"/>
+					<ResultDefinition purpose="selectionSummary" name="dd1027" syntheticItems="si937"/>
+					<ResultDefinition purpose="estimateEffect" name="dd1028" syntheticItems="si958"/>
+					<ResultDefinition purpose="estimateCount" name="dd1029" syntheticItems="si965"/>
+					<ResultDefinition purpose="groupEstimates" name="dd1030" syntheticItems="si971"/>
+					<ResultDefinition purpose="estimateValueRange" name="dd1031" syntheticItems="si977"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters/>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds1464" name="dd1038">
+			<BusinessItems>
+				<RelationalDataItem name="bi1479" base="bi1470"/>
+				<RelationalDataItem name="bi1480" base="bi1466"/>
+				<RelationalDataItem name="bi1481" base="bi1471"/>
+				<RelationalDataItem name="bi1483" base="bi1469"/>
+				<RelationalDataItem name="bi1484" base="bi1468"/>
+				<RelationalDataItem name="bi1485" base="bi9"/>
+				<RelationalDataItem name="bi1486" base="bi10"/>
+				<RelationalDataItem name="bi1487" base="bi35"/>
+				<RelationalDataItem name="bi1488" base="bi36"/>
+				<RelationalDataItem name="bi1489" base="bi37"/>
+				<RelationalDataItem name="bi1490" base="bi38"/>
+				<RelationalDataItem name="bi1491" base="bi39"/>
+				<RelationalDataItem name="bi1492" base="bi40"/>
+				<RelationalDataItem name="bi1493" base="bi41"/>
+				<RelationalDataItem name="bi1494" base="bi42"/>
+				<RelationalDataItem name="bi1495" base="bi43"/>
+				<RelationalDataItem name="bi1496" base="bi44"/>
+				<RelationalDataItem name="bi1497" base="bi45"/>
+				<RelationalDataItem name="bi1498" base="bi46"/>
+				<RelationalFilterItem systemGenerated="true" name="bi1499">
+					<EditorProperties>
+						<Property key="complexity">SINGLE_DATA_ITEM</Property>
+						<Property key="interactiveEditingAllowed">FALSE</Property>
+					</EditorProperties>
+					<Expression>ne(${bi1481,binned},0)</Expression>
+				</RelationalFilterItem>
+				<RelationalDataItem name="bi1500" base="bi62"/>
+				<SyntheticDataItem name="bi1501"/>
+				<SyntheticDataItem name="bi1502"/>
+				<SyntheticDataItem name="bi1503"/>
+				<SyntheticDataItem name="bi1504"/>
+				<SyntheticDataItem name="bi1475"/>
+				<SyntheticDataItem name="bi1476"/>
+				<SyntheticDataItem name="bi1477"/>
+				<SyntheticDataItem name="bi1478"/>
+			</BusinessItems>
+			<DataDefinition dataSource="ds1464" type="procedural" name="dd1039">
+				<ProceduralQuery type="heatMap">
+					<Arguments>
+						<Argument purpose="aggregatedMeasure">
+							<ReferenceValue>bi1500</ReferenceValue>
+						</Argument>
+						<ArgumentGroup group="column">
+							<Argument purpose="inputVariable">
+								<ReferenceValue>bi1479</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi1501</ReferenceValue>
+							</Argument>
+							<Argument purpose="upperBound">
+								<ReferenceValue>bi1502</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+						<ArgumentGroup group="row">
+							<Argument purpose="inputVariable">
+								<ReferenceValue>bi1480</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi1503</ReferenceValue>
+							</Argument>
+							<Argument purpose="upperBound">
+								<ReferenceValue>bi1504</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+						<ArgumentGroup group="variableOutputInfo">
+							<Argument purpose="variableName">
+								<ReferenceValue>bi1475</ReferenceValue>
+							</Argument>
+							<Argument purpose="lowerBound">
+								<ReferenceValue>bi1476</ReferenceValue>
+							</Argument>
+							<Argument purpose="binWidth">
+								<ReferenceValue>bi1477</ReferenceValue>
+							</Argument>
+							<Argument purpose="binCount">
+								<ReferenceValue>bi1478</ReferenceValue>
+							</Argument>
+						</ArgumentGroup>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd1473"/>
+					<ResultDefinition purpose="variableOutputInfo" name="dd1474"/>
+				</ResultDefinitions>
+			</DataDefinition>
+			<AppliedFilters>
+				<DetailFilters>
+					<BusinessItem ref="bi1499"/>
+				</DetailFilters>
+			</AppliedFilters>
+		</ParentDataDefinition>
+		<ParentDataDefinition childQueryRelationship="independent" status="executable" dataSource="ds1464" name="dd1043">
+			<BusinessItems>
+				<RelationalDataItem name="bi1461" base="bi61"/>
+				<RelationalDataItem name="bi1505" base="bi1470"/>
+				<SyntheticItems name="si1046">
+					<Item purpose="percentile" name="bi1047"/>
+					<Item purpose="observationCount" name="bi1048"/>
+					<Item purpose="predictedMean" name="bi1049"/>
+					<Item purpose="targetMean" name="bi1050"/>
+					<Item purpose="partition" name="bi1051"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1124">
+					<Item purpose="ase" name="bi1125"/>
+					<Item purpose="aseLabel" name="bi1126"/>
+					<Item purpose="validateAse" name="bi1127"/>
+					<Item purpose="validateAseLabel" name="bi1128"/>
+					<Item purpose="testAse" name="bi1129"/>
+					<Item purpose="testAseLabel" name="bi1130"/>
+					<Item purpose="ks" name="bi1131"/>
+					<Item purpose="ksLabel" name="bi1132"/>
+					<Item purpose="validateKs" name="bi1133"/>
+					<Item purpose="validateKsLabel" name="bi1134"/>
+					<Item purpose="testKs" name="bi1135"/>
+					<Item purpose="testKsLabel" name="bi1136"/>
+					<Item purpose="misclassificationEventless" name="bi1137"/>
+					<Item purpose="misclassificationEventlessLabel" name="bi1138"/>
+					<Item purpose="validateMisclassificationEventless" name="bi1139"/>
+					<Item purpose="validateMisclassificationEventlessLabel" name="bi1140"/>
+					<Item purpose="testMisclassificationEventless" name="bi1141"/>
+					<Item purpose="testMisclassificationEventlessLabel" name="bi1142"/>
+					<Item purpose="misclassification" name="bi1143"/>
+					<Item purpose="misclassificationLabel" name="bi1144"/>
+					<Item purpose="validateMisclassification" name="bi1145"/>
+					<Item purpose="validateMisclassificationLabel" name="bi1146"/>
+					<Item purpose="testMisclassification" name="bi1147"/>
+					<Item purpose="testMisclassificationLabel" name="bi1148"/>
+					<Item purpose="countUsed" name="bi1149"/>
+					<Item purpose="countUsedLabel" name="bi1150"/>
+					<Item purpose="countUnused" name="bi1151"/>
+					<Item purpose="countUnusedLabel" name="bi1152"/>
+					<Item purpose="dependentVariableLabel" name="bi1153"/>
+					<Item purpose="eventLabel" name="bi1154"/>
+					<Item purpose="eventString" name="bi1155"/>
+					<Item purpose="countUsedValidate" name="bi1156"/>
+					<Item purpose="countUnusedValidate" name="bi1157"/>
+					<Item purpose="countUsedTrain" name="bi1158"/>
+					<Item purpose="countUnusedTrain" name="bi1159"/>
+					<Item purpose="countUsedTest" name="bi1160"/>
+					<Item purpose="countUnusedTest" name="bi1161"/>
+					<Item purpose="observedAverage" name="bi1309"/>
+					<Item purpose="observedAverageLabel" name="bi1310"/>
+					<Item purpose="predictedAverage" name="bi1311"/>
+					<Item purpose="predictedAverageLabel" name="bi1312"/>
+					<Item purpose="sse" name="bi1313"/>
+					<Item purpose="sseLabel" name="bi1314"/>
+					<Item purpose="sseWeighted" name="bi1315"/>
+					<Item purpose="sseWeightedLabel" name="bi1316"/>
+					<Item purpose="cStatistic" name="bi1317"/>
+					<Item purpose="cStatisticLabel" name="bi1318"/>
+					<Item purpose="fpr" name="bi1319"/>
+					<Item purpose="fprLabel" name="bi1320"/>
+					<Item purpose="fdr" name="bi1321"/>
+					<Item purpose="fdrLabel" name="bi1322"/>
+					<Item purpose="f1Score" name="bi1323"/>
+					<Item purpose="f1ScoreLabel" name="bi1324"/>
+					<Item purpose="lift" name="bi1325"/>
+					<Item purpose="liftLabel" name="bi1326"/>
+					<Item purpose="cumulativeLift" name="bi1327"/>
+					<Item purpose="cumulativeLiftLabel" name="bi1328"/>
+					<Item purpose="cumulativePercentResponse" name="bi1329"/>
+					<Item purpose="cumulativePercentResponseLabel" name="bi1330"/>
+					<Item purpose="cumulativeResponse" name="bi1331"/>
+					<Item purpose="cumulativeResponseLabel" name="bi1332"/>
+					<Item purpose="gain" name="bi1333"/>
+					<Item purpose="gainLabel" name="bi1334"/>
+					<Item purpose="gini" name="bi1335"/>
+					<Item purpose="giniLabel" name="bi1336"/>
+					<Item purpose="gamma" name="bi1337"/>
+					<Item purpose="gammaLabel" name="bi1338"/>
+					<Item purpose="tau" name="bi1339"/>
+					<Item purpose="tauLabel" name="bi1340"/>
+					<Item purpose="validateObservedAverage" name="bi1357"/>
+					<Item purpose="validateObservedAverageLabel" name="bi1358"/>
+					<Item purpose="testObservedAverage" name="bi1359"/>
+					<Item purpose="testObservedAverageLabel" name="bi1360"/>
+					<Item purpose="validatePredictedAverage" name="bi1361"/>
+					<Item purpose="validatePredictedAverageLabel" name="bi1362"/>
+					<Item purpose="testPredictedAverage" name="bi1363"/>
+					<Item purpose="testPredictedAverageLabel" name="bi1364"/>
+					<Item purpose="validateCStatistic" name="bi1365"/>
+					<Item purpose="validateCStatisticLabel" name="bi1366"/>
+					<Item purpose="testCStatistic" name="bi1367"/>
+					<Item purpose="testCStatisticLabel" name="bi1368"/>
+					<Item purpose="validateFpr" name="bi1369"/>
+					<Item purpose="validateFprLabel" name="bi1370"/>
+					<Item purpose="testFpr" name="bi1371"/>
+					<Item purpose="testFprLabel" name="bi1372"/>
+					<Item purpose="validateFdr" name="bi1373"/>
+					<Item purpose="validateFdrLabel" name="bi1374"/>
+					<Item purpose="testFdr" name="bi1375"/>
+					<Item purpose="testFdrLabel" name="bi1376"/>
+					<Item purpose="validateF1Score" name="bi1377"/>
+					<Item purpose="validateF1ScoreLabel" name="bi1378"/>
+					<Item purpose="testF1Score" name="bi1379"/>
+					<Item purpose="testF1ScoreLabel" name="bi1380"/>
+					<Item purpose="validateLift" name="bi1381"/>
+					<Item purpose="validateLiftLabel" name="bi1382"/>
+					<Item purpose="testLift" name="bi1383"/>
+					<Item purpose="testLiftLabel" name="bi1384"/>
+					<Item purpose="validateCumulativeLift" name="bi1385"/>
+					<Item purpose="validateCumulativeLiftLabel" name="bi1386"/>
+					<Item purpose="testCumulativeLift" name="bi1387"/>
+					<Item purpose="testCumulativeLiftLabel" name="bi1388"/>
+					<Item purpose="validateCumulativePercentResponse" name="bi1389"/>
+					<Item purpose="validateCumulativePercentResponseLabel" name="bi1390"/>
+					<Item purpose="testCumulativePercentResponse" name="bi1391"/>
+					<Item purpose="testCumulativePercentResponseLabel" name="bi1392"/>
+					<Item purpose="validateCumulativeResponse" name="bi1393"/>
+					<Item purpose="validateCumulativeResponseLabel" name="bi1394"/>
+					<Item purpose="testCumulativeResponse" name="bi1395"/>
+					<Item purpose="testCumulativeResponseLabel" name="bi1396"/>
+					<Item purpose="validateGain" name="bi1397"/>
+					<Item purpose="validateGainLabel" name="bi1398"/>
+					<Item purpose="testGain" name="bi1399"/>
+					<Item purpose="testGainLabel" name="bi1400"/>
+					<Item purpose="validateGini" name="bi1401"/>
+					<Item purpose="validateGiniLabel" name="bi1402"/>
+					<Item purpose="testGini" name="bi1403"/>
+					<Item purpose="testGiniLabel" name="bi1404"/>
+					<Item purpose="validateGamma" name="bi1405"/>
+					<Item purpose="validateGammaLabel" name="bi1406"/>
+					<Item purpose="testGamma" name="bi1407"/>
+					<Item purpose="testGammaLabel" name="bi1408"/>
+					<Item purpose="validateTau" name="bi1409"/>
+					<Item purpose="validateTauLabel" name="bi1410"/>
+					<Item purpose="testTau" name="bi1411"/>
+					<Item purpose="testTauLabel" name="bi1412"/>
+					<Item purpose="neg2LogLikelihood" name="bi1413"/>
+					<Item purpose="neg2LogLikelihoodLabel" name="bi1414"/>
+					<Item purpose="aic" name="bi1415"/>
+					<Item purpose="aicLabel" name="bi1416"/>
+					<Item purpose="aicc" name="bi1417"/>
+					<Item purpose="aiccLabel" name="bi1418"/>
+					<Item purpose="bic" name="bi1419"/>
+					<Item purpose="bicLabel" name="bi1420"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1162">
+					<Item purpose="partition" name="bi1163"/>
+					<Item purpose="ase" name="bi1164"/>
+					<Item purpose="ks" name="bi1165"/>
+					<Item purpose="misclassificationEventless" name="bi1166"/>
+					<Item purpose="misclassification" name="bi1167"/>
+					<Item purpose="countUsed" name="bi1168"/>
+					<Item purpose="countUnused" name="bi1169"/>
+					<Item purpose="observedAverage" name="bi1341"/>
+					<Item purpose="predictedAverage" name="bi1342"/>
+					<Item purpose="sse" name="bi1343"/>
+					<Item purpose="sseWeighted" name="bi1344"/>
+					<Item purpose="cStatistic" name="bi1345"/>
+					<Item purpose="fpr" name="bi1346"/>
+					<Item purpose="fdr" name="bi1347"/>
+					<Item purpose="f1Score" name="bi1348"/>
+					<Item purpose="lift" name="bi1349"/>
+					<Item purpose="cumulativeLift" name="bi1350"/>
+					<Item purpose="cumulativePercentResponse" name="bi1351"/>
+					<Item purpose="cumulativeResponse" name="bi1352"/>
+					<Item purpose="gain" name="bi1353"/>
+					<Item purpose="gini" name="bi1354"/>
+					<Item purpose="gamma" name="bi1355"/>
+					<Item purpose="tau" name="bi1356"/>
+					<Item purpose="neg2LogLikelihood" name="bi1421"/>
+					<Item purpose="aic" name="bi1422"/>
+					<Item purpose="aicc" name="bi1423"/>
+					<Item purpose="bic" name="bi1424"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1292">
+					<Item purpose="label" name="bi1293"/>
+					<Item purpose="uniqueLabel" name="bi1294"/>
+					<Item purpose="dataSourceName" name="bi1295"/>
+					<Item purpose="importance" name="bi1296"/>
+					<Item purpose="standardDeviation" name="bi1297"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1305">
+					<Item purpose="label" name="bi1306"/>
+					<Item purpose="textSummary" name="bi1307"/>
+					<Item purpose="assessmentSummaryConstant" name="bi1308"/>
+				</SyntheticItems>
+				<SyntheticItems name="si1298">
+					<Item purpose="measureAssessmentSummary" name="bi1299"/>
+					<Item purpose="cumulativeLiftAssessmentSummary" name="bi1300"/>
+					<Item purpose="liftAssessmentSummary" name="bi1301"/>
+					<Item purpose="rocAssessmentSummary" name="bi1302"/>
+					<Item purpose="misclassificationAssessmentSummary" name="bi1303"/>
+					<Item purpose="confusionMatrixAssessmentSummary" name="bi1304"/>
+				</SyntheticItems>
+			</BusinessItems>
+			<DataDefinition dataSource="ds1464" type="procedural" name="dd1044">
+				<ProceduralQuery type="assessment" scoreCodeNumber="1045">
+					<ReferenceResources>
+						<ReferenceData resource="ge1010" generator="dd873" purpose="model"/>
+					</ReferenceResources>
+					<Arguments>
+						<Argument purpose="dependentVariable">
+							<ReferenceValue>bi1461</ReferenceValue>
+						</Argument>
+						<Argument purpose="predictedVariable">
+							<ReferenceValue>bi1505</ReferenceValue>
+						</Argument>
+						<Argument purpose="usesPartition">
+							<BooleanValue>false</BooleanValue>
+						</Argument>
+						<Argument purpose="binCount">
+							<IntValue>20</IntValue>
+						</Argument>
+						<Argument purpose="maxIterationCount">
+							<IntValue>50</IntValue>
+						</Argument>
+						<Argument purpose="threshold">
+							<DoubleValue>1.0E-10</DoubleValue>
+						</Argument>
+						<Argument purpose="excludeMissing">
+							<BooleanValue>true</BooleanValue>
+						</Argument>
+						<Argument purpose="cutOff">
+							<DoubleValue>0.5</DoubleValue>
+						</Argument>
+						<Argument purpose="fitModelPercentage">
+							<DoubleValue>0.05</DoubleValue>
+						</Argument>
+						<Argument purpose="filterModel">
+							<StringValue>fitModel</StringValue>
+						</Argument>
+					</Arguments>
+				</ProceduralQuery>
+				<ResultDefinitions>
+					<ResultDefinition purpose="primary" name="dd1425" syntheticItems="si1046"/>
+					<ResultDefinition purpose="fitStatistics" name="dd1426" syntheticItems="si1124"/>
+					<ResultDefinition purpose="fitStatisticsTall" name="dd1427" syntheticItems="si1162"/>
+					<ResultDefinition purpose="relativeImportance" name="dd1428" syntheticItems="si1292"/>
+					<ResultDefinition purpose="assessmentSummaryDisplay" name="dd1429" syntheticItems="si1305"/>
+					<ResultDefinition purpose="assessmentSummaryRow" name="dd1430" syntheticItems="si1298"/>
+				</ResultDefinitions>
+			</DataDefinition>
+		</ParentDataDefinition>
+	</DataDefinitions>
+	<DataSources>
+		<DataSource label="VS_BANK" type="relational" name="ds7">
+			<CasResource server="cas-shared-default" library="Public" table="VS_BANK" locale="en_US"/>
+			<BusinessItemFolder>
+				<DataItem name="bi8" xref="account"/>
+				<DataItem name="bi9" xref="cat_input1"/>
+				<DataItem name="bi10" xref="cat_input2"/>
+				<DataItem name="bi11" xref="demog_age"/>
+				<DataItem name="bi12" xref="demog_genf"/>
+				<DataItem name="bi13" xref="demog_homeval"/>
+				<DataItem name="bi14" xref="demog_ho"/>
+				<DataItem name="bi15" xref="demog_inc"/>
+				<DataItem name="bi16" xref="demog_genm"/>
+				<DataItem name="bi17" xref="demog_pr"/>
+				<DataItem name="bi18" xref="i_demog_age"/>
+				<DataItem name="bi19" xref="r_demog_homeval"/>
+				<DataItem name="bi20" xref="r_demog_inc"/>
+				<DataItem name="bi21" xref="ri_demog_homeval"/>
+				<DataItem name="bi22" xref="ri_demog_inc"/>
+				<DataItem name="bi23" xref="i_rfm1"/>
+				<DataItem name="bi24" xref="i_rfm10"/>
+				<DataItem name="bi25" xref="i_rfm11"/>
+				<DataItem name="bi26" xref="i_rfm12"/>
+				<DataItem name="bi27" xref="i_rfm2"/>
+				<DataItem name="bi28" xref="i_rfm3"/>
+				<DataItem name="bi29" xref="i_rfm4"/>
+				<DataItem name="bi30" xref="i_rfm5"/>
+				<DataItem name="bi31" xref="i_rfm6"/>
+				<DataItem name="bi32" xref="i_rfm7"/>
+				<DataItem name="bi33" xref="i_rfm8"/>
+				<DataItem name="bi34" xref="i_rfm9"/>
+				<DataItem name="bi35" xref="logi_rfm1"/>
+				<DataItem name="bi36" xref="logi_rfm10"/>
+				<DataItem name="bi37" xref="logi_rfm11"/>
+				<DataItem name="bi38" xref="logi_rfm12"/>
+				<DataItem name="bi39" xref="logi_rfm2"/>
+				<DataItem name="bi40" xref="logi_rfm3"/>
+				<DataItem name="bi41" xref="logi_rfm4"/>
+				<DataItem name="bi42" xref="logi_rfm5"/>
+				<DataItem name="bi43" xref="logi_rfm6"/>
+				<DataItem name="bi44" xref="logi_rfm7"/>
+				<DataItem name="bi45" xref="logi_rfm8"/>
+				<DataItem name="bi46" xref="logi_rfm9"/>
+				<DataItem name="bi47" xref="rfm1"/>
+				<DataItem name="bi48" xref="rfm10"/>
+				<DataItem name="bi49" xref="rfm11"/>
+				<DataItem name="bi50" xref="rfm12"/>
+				<DataItem name="bi51" xref="rfm2"/>
+				<DataItem name="bi52" xref="rfm3"/>
+				<DataItem name="bi53" xref="rfm4"/>
+				<DataItem name="bi54" xref="rfm5"/>
+				<DataItem name="bi55" xref="rfm6"/>
+				<DataItem name="bi56" xref="rfm7"/>
+				<DataItem name="bi57" xref="rfm8"/>
+				<DataItem name="bi58" xref="rfm9"/>
+				<DataItem name="bi59" xref="b_tgt"/>
+				<DataItem name="bi60" xref="cnt_tgt"/>
+				<DataItem name="bi61" xref="int_tgt"/>
+				<PredefinedDataItem calculation="totalCount" name="bi62" label="Frequency" usage="quantitative" format="COMMA12."/>
+				<PredefinedDataItem calculation="totalCountPercent" name="bi63" label="Frequency Percent" usage="quantitative" format="PERCENT20.2"/>
+				<CrossEffectInteraction name="bi834" label="RFM Interaction" items="bi41 bi46"/>
+			</BusinessItemFolder>
+		</DataSource>
+		<DataSource label="VS_BANK" type="relational" hidden="true" name="ds743">
+			<GeneratedResource type="inherited" resource="ge211" generator="dd76" source="ds7"/>
+			<BusinessItemFolder>
+				<GeneratedDataItem purpose="predlin" name="bi744" xref="_PREDLIN_" usage="quantitative"/>
+				<GeneratedDataItem purpose="resid" name="bi745" xref="_RESID_" usage="quantitative"/>
+				<GeneratedDataItem purpose="student" name="bi746" xref="_STUDENT_" usage="quantitative"/>
+				<GeneratedDataItem purpose="rstudent" name="bi747" xref="_RSTUDENT_" usage="quantitative"/>
+				<GeneratedDataItem purpose="leverage" name="bi748" xref="_LEVERAGE_" usage="quantitative"/>
+				<GeneratedDataItem purpose="press" name="bi749" xref="_PRESS_" usage="quantitative"/>
+				<GeneratedDataItem purpose="cookd" name="bi750" xref="_COOKD_" usage="quantitative"/>
+				<GeneratedDataItem purpose="dffits" name="bi751" xref="_DFFITS_" usage="quantitative"/>
+				<GeneratedDataItem purpose="covratio" name="bi752" xref="_COVRATIO_" usage="quantitative"/>
+				<GeneratedDataItem purpose="likedist" name="bi753" xref="_LIKEDIST_" usage="quantitative"/>
+				<GeneratedDataItem purpose="fitrole" name="bi754" xref="_FITROLE_" usage="categorical"/>
+			</BusinessItemFolder>
+		</DataSource>
+		<DataSource label="VS_BANK" type="relational" hidden="true" name="ds1464">
+			<GeneratedResource type="inherited" resource="ge1009" generator="dd873" source="ds7"/>
+			<BusinessItemFolder>
+				<GeneratedDataItem purpose="predglm" name="bi1465" xref="_PREDGLM_" usage="quantitative"/>
+				<GeneratedDataItem purpose="resid" name="bi1466" xref="_RESID_" usage="quantitative"/>
+				<GeneratedDataItem purpose="likedist" name="bi1467" xref="_LIKEDIST_" usage="quantitative"/>
+				<GeneratedDataItem purpose="pearson" name="bi1468" xref="_PEARSON_" usage="quantitative"/>
+				<GeneratedDataItem purpose="stdreschi" name="bi1469" xref="_STDRESCHI_" usage="quantitative"/>
+				<GeneratedDataItem purpose="ilinkglm" name="bi1470" xref="_ILINKGLM_" usage="quantitative"/>
+				<GeneratedDataItem purpose="fitrole" name="bi1471" xref="_FITROLE_" usage="categorical"/>
+			</BusinessItemFolder>
+		</DataSource>
+	</DataSources>
+	<VisualElements>
+		<CompositeContainer composite="ve65" name="ve66" label="Linear regression - tgt Interval New Sales 1">
+			<EditorProperties>
+				<Property key="visualType">linearRegressionContainer</Property>
+				<Property key="isAutoLabel">true</Property>
+			</EditorProperties>
+		</CompositeContainer>
+		<Text resultDefinitions="dd657" name="ve67" data="dd262" label="Header" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="visualType">INFO_BAR_TEXT_LINEAR</Property>
+				<Property key="selectedStatistic">rootMse</Property>
+			</EditorProperties>
+			<Title></Title>
+			<P><Span class="infoBarTextTitle">Linear Regression</Span><Span>   </Span><DynamicSpan variable="bi372" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi645"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi644" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi369"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi368" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi371"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi370" class="infoBarTextBold"></DynamicSpan><Span>   </Span></P>
+		</Text>
+		<VisualContainer name="ve69" label="Composite Subcontainer" selectionDisabled="true">
+			<EditorProperties>
+				<Property key="visualType">COMPOSITE_SUBCONTAINER</Property>
+			</EditorProperties>
+			<StackNavigationControl horizontalPosition="left" verticalPosition="top" buttonDirection="horizontal" buttonType="tab"/>
+		</VisualContainer>
+		<Graph graphType="linearRegression" resultDefinitions="dd214 dd215" name="ve73" data="dd75" label="Fit Summary" applyDynamicFilters="yes" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="layout">maximized</Property>
+				<Property key="showInfluence">true</Property>
+			</EditorProperties>
+			<Title><P><Span>Fit Summary</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false" includeMissingDiscrete="true" selectionMode="multiple" missingValueDisplay="autolabel">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="BarChart_38" data="dd214"/>
+            <Entry model="HistogramParm_21" data="dd215"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutLattice rowDataRange="union" columnDataRange="union" rows="2" rowWeights="0.85 0.15">
+        <Cell>
+            <LayoutOverlay>
+                <BarChartParm name="BarChart_38" selectable="true" _stmt="barchart" orient="horizontal" stat="none" tip="category Role1 Role2" category="dd214#bi93" colorResponse="dd214#bi97" colorResponseAttrVar="attrVar0">
+                    <ResponseVars>
+                        <Value>dd214#bi97</Value>
+                    </ResponseVars>
+                    <Roles>
+                        <Role name="Role1" type="variable">dd214#bi98</Role>
+                        <Role name="Role2" type="variable">dd214#bi96</Role>
+                    </Roles>
+                </BarChartParm>
+                <ReferenceLine name="ReferenceLine_28" visible="true" tip="Role1 x" x_type="NUMERIC" x="1.30103">
+                    <Roles>
+                        <Role name="Role1" type="numeric">0.0499999995007974</Role>
+                    </Roles>
+                    <TipFormats>
+                        <TipFormat name="Role1">BEST7</TipFormat>
+                        <TipFormat name="x">BEST7</TipFormat>
+                    </TipFormats>
+                    <TipLabels>
+                        <TipLabel name="Role1">alpha</TipLabel>
+                        <TipLabel name="x">-log (alpha)</TipLabel>
+                    </TipLabels>
+                </ReferenceLine>
+            </LayoutOverlay>
+        </Cell>
+        <Cell>
+            <LayoutOverlay>
+                <HistogramParm name="HistogramParm_21" selectable="false" display="FILL" endLabels="true" xValues="midpoints" tip="Role1" x="dd215#bi102" y="dd215#bi100">
+                    <Roles>
+                        <Role name="Role1" type="variable">dd215#bi101</Role>
+                    </Roles>
+                </HistogramParm>
+                <ReferenceLine name="ReferenceLine_29" visible="true" tip="Role1 x" x_type="NUMERIC" x="1.30103">
+                    <Roles>
+                        <Role name="Role1" type="numeric">0.0499999995007974</Role>
+                    </Roles>
+                    <TipFormats>
+                        <TipFormat name="Role1">BEST7</TipFormat>
+                        <TipFormat name="x">BEST7</TipFormat>
+                    </TipFormats>
+                    <TipLabels>
+                        <TipLabel name="Role1">alpha</TipLabel>
+                        <TipLabel name="x">-log (alpha)</TipLabel>
+                    </TipLabels>
+                </ReferenceLine>
+            </LayoutOverlay>
+        </Cell>
+        <ColumnAxes>
+            <ColumnAxis display="LABEL TICKVALUES" gridDisplay="on" offsetMin="0">
+                <LinearOpts tickValueFormat="data">
+                    <TickValues>
+                        <Value>1</Value>
+                        <Value>2</Value>
+                        <Value>3</Value>
+                        <Value>4</Value>
+                        <Value>5</Value>
+                    </TickValues>
+                </LinearOpts>
+            </ColumnAxis>
+        </ColumnAxes>
+        <RowAxes>
+            <RowAxis display="TICKVALUES" reverse="true">
+                <DiscreteOpts tickValueFitPolicy="truncate" tickSpacing="22px"/>
+            </RowAxis>
+            <RowAxis display="NONE" label="hist"/>
+        </RowAxes>
+    </LayoutLattice>
+    <RangeAttrMap name="attrMap0">
+        <AttrRange minValue="0" minExclude="false" maxValue="1.30103" maxExclude="true" rangeColorModel="TwoColorRamp1"/>
+        <AttrRange minValue="1.30103" minExclude="false" maxValue="5.1" maxExclude="false" rangeColorModel="TwoColorRamp3"/>
+    </RangeAttrMap>
+    <RangeAttrVar attrVar="attrVar0" attrMap="attrMap0"/>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="linearInfluence" resultDefinitions="dd227" name="ve232" data="dd75" label="Variable Selection" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="fitRoleFilter"></Property>
+				<Property key="influencePlotType">variableSelection</Property>
+				<Property key="influenceStatisticName">_LIKEDIST_</Property>
+			</EditorProperties>
+			<Title><P><Span>Variable Selection Plot</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="SeriesPlot_31" data="dd227"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay>
+        <SeriesPlot name="SeriesPlot_31" showMissingValuesInTips="false" display="MARKERS" tip="Role1 Role2 Role3 Role4 Role5 Role6 Role1 Role7 Role8 Role9 Role10 Role11 x" dataLabel="dd227#bi143" x="dd227#bi137">
+            <YVars>
+                <Value>dd227#bi145</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd227#bi145</Role>
+                <Role name="Role2" type="variable">dd227#bi140</Role>
+                <Role name="Role3" type="variable">dd227#bi141</Role>
+                <Role name="Role4" type="variable">dd227#bi142</Role>
+                <Role name="Role5" type="variable">dd227#bi138</Role>
+                <Role name="Role6" type="variable">dd227#bi144</Role>
+                <Role name="Role7" type="variable">dd227#bi146</Role>
+                <Role name="Role8" type="variable">dd227#bi148</Role>
+                <Role name="Role9" type="variable">dd227#bi150</Role>
+                <Role name="Role10" type="variable">dd227#bi152</Role>
+                <Role name="Role11" type="variable">dd227#bi154</Role>
+            </Roles>
+        </SeriesPlot>
+        <XAxisOpts display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts integer="true">
+                <TickValueFormatOpts/>
+            </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts>
+                <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+    </LayoutOverlay>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="linearResidual" resultDefinitions="dd768 dd769" name="ve255" data="dd257" label="Residual" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="fitRoleFilter"></Property>
+				<Property key="residualStatisticName">_STUDENT_</Property>
+			</EditorProperties>
+			<Title><P><Span>Residual Plot</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="BinMetadata" data="dd769"/>
+            <Entry model="HeatmapParm" data="dd768"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay>
+        <HeatmapParm name="HeatmapParm" tipListPolicy="append" xBinAxis="false" yBinAxis="false" xBinSize="1" yBinSize="1" xGap="0px" yGap="0px" tipXBinStyle="range" tipYBinStyle="range" x="dd768#bi774" y="dd768#bi779" colorResponse="dd768#bi801" colorResponseAttrVar="attrVar0">
+            <BinMetadata name="BinMetadata" dataField="dd769#bi770" size="dd769#bi772" start="dd769#bi771" count="dd769#bi773"/>
+        </HeatmapParm>
+        <ReferenceLine name="ReferenceLine_1" yAxis="y" y_type="NUMERIC" y="-2"/>
+        <ReferenceLine name="ReferenceLine_2" yAxis="y" y_type="NUMERIC" y="2"/>
+        <XAxisOpts type="linear" display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts>
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts type="linear" display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts centerOn="0">
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+    </LayoutOverlay>
+    <LayoutGlobalLegend border="false" hAlign="right" vAlign="center" legendTitlePosition="top" position="right" allowCollapsed="true">
+        <ContinuousLegend border="false" opaque="false" vAlign="bottom" valueStyle="inflections" displayMissing="automatic" extractScale="true" type="fillcolor">
+            <PadAttrs top="2px" bottom="2px" left="2px" right="2px"/>
+            <GraphNames>
+                <Value>HeatmapParm</Value>
+            </GraphNames>
+        </ContinuousLegend>
+    </LayoutGlobalLegend>
+    <RangeAttrMap name="attrMap0">
+        <AttrRange minValue="min" minExclude="false" maxValue="max" maxExclude="false" rangeColorModel="TwoColorRamp"/>
+    </RangeAttrMap>
+    <RangeAttrVar attrVar="attrVar0" attrMap="attrMap0"/>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="linearAssessment" resultDefinitions="dd656" name="ve260" data="dd262" label="Assessment" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="assessmentType">linear</Property>
+			</EditorProperties>
+			<Title><P><Span>Assessment</Span></P></Title>
+<![CDATA[<StatGraph opaque="false" selectionMode="multiple">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="SeriesPlot_27" data="dd656"/>
+            <Entry model="SeriesPlot_28" data="dd656"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay>
+        <SeriesPlot name="SeriesPlot_27" tip="x Role1 Role2" x="dd656#bi266" lineAttrs="GraphDataStyle1">
+            <YVars>
+                <Value>dd656#bi268</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd656#bi268</Role>
+                <Role name="Role2" type="variable">dd656#bi267</Role>
+            </Roles>
+            <LineAttrs/>
+        </SeriesPlot>
+        <SeriesPlot name="SeriesPlot_28" tip="x Role1 Role2" x="dd656#bi266" lineAttrs="GraphDataStyle2">
+            <YVars>
+                <Value>dd656#bi269</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd656#bi269</Role>
+                <Role name="Role2" type="variable">dd656#bi267</Role>
+            </Roles>
+            <LineAttrs/>
+        </SeriesPlot>
+        <YAxisOpts label="tgt Interval New Sales"/>
+    </LayoutOverlay>
+    <LayoutGlobalLegend border="false" legendTitlePosition="top" allowCollapsed="true">
+        <DiscreteLegend border="false" opaque="false" hAlign="left" vAlign="bottom">
+            <GraphNames>
+                <Value>SeriesPlot_27</Value>
+                <Value>SeriesPlot_28</Value>
+            </GraphNames>
+        </DiscreteLegend>
+    </LayoutGlobalLegend>
+</StatGraph>]]>
+		</Graph>
+		<CompositeContainer composite="ve862" name="ve863" label="Generalized linear model - tgt Interval New Sales 1">
+			<EditorProperties>
+				<Property key="visualType">glmContainer</Property>
+				<Property key="isAutoLabel">true</Property>
+			</EditorProperties>
+		</CompositeContainer>
+		<Text resultDefinitions="dd1426" name="ve864" data="dd1043" label="Header" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="visualType">INFO_BAR_TEXT_GLM</Property>
+				<Property key="selectedStatistic">ase</Property>
+			</EditorProperties>
+			<Title></Title>
+			<P><Span class="infoBarTextTitle">Generalized Linear Model</Span><Span>   </Span><DynamicSpan variable="bi1153" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1126"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1125" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1150"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1149" class="infoBarTextBold"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1152"></DynamicSpan><Span>   </Span><DynamicSpan variable="bi1151" class="infoBarTextBold"></DynamicSpan><Span>   </Span></P>
+		</Text>
+		<VisualContainer name="ve866" label="Composite Subcontainer" selectionDisabled="true">
+			<EditorProperties>
+				<Property key="visualType">COMPOSITE_SUBCONTAINER</Property>
+			</EditorProperties>
+			<StackNavigationControl horizontalPosition="left" verticalPosition="top" buttonDirection="horizontal" buttonType="tab"/>
+		</VisualContainer>
+		<Graph graphType="glmRegression" resultDefinitions="dd1012 dd1013" name="ve870" data="dd872" label="Fit Summary" applyDynamicFilters="yes" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="layout">maximized</Property>
+			</EditorProperties>
+			<Title><P><Span>Fit Summary</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false" includeMissingDiscrete="true" selectionMode="multiple" missingValueDisplay="autolabel">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="BarChart_23" data="dd1012"/>
+            <Entry model="HistogramParm_22" data="dd1013"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutLattice rowDataRange="union" columnDataRange="union" rows="2" rowWeights="0.85 0.15">
+        <Cell>
+            <LayoutOverlay>
+                <BarChartParm name="BarChart_23" selectable="true" _stmt="barchart" orient="horizontal" stat="none" tip="category Role1 Role2" category="dd1012#bi890" colorResponse="dd1012#bi894" colorResponseAttrVar="attrVar0">
+                    <ResponseVars>
+                        <Value>dd1012#bi894</Value>
+                    </ResponseVars>
+                    <Roles>
+                        <Role name="Role1" type="variable">dd1012#bi895</Role>
+                        <Role name="Role2" type="variable">dd1012#bi893</Role>
+                    </Roles>
+                </BarChartParm>
+                <ReferenceLine name="ReferenceLine_36" visible="true" tip="Role1 x" x_type="NUMERIC" x="1.30102999566398">
+                    <Roles>
+                        <Role name="Role1" type="numeric">0.05</Role>
+                    </Roles>
+                    <TipFormats>
+                        <TipFormat name="Role1">BEST7</TipFormat>
+                        <TipFormat name="x">BEST7</TipFormat>
+                    </TipFormats>
+                    <TipLabels>
+                        <TipLabel name="Role1">alpha</TipLabel>
+                        <TipLabel name="x">-log (alpha)</TipLabel>
+                    </TipLabels>
+                </ReferenceLine>
+            </LayoutOverlay>
+        </Cell>
+        <Cell>
+            <LayoutOverlay>
+                <HistogramParm name="HistogramParm_22" selectable="false" display="FILL" endLabels="true" xValues="midpoints" tip="Role1" x="dd1013#bi899" y="dd1013#bi897">
+                    <Roles>
+                        <Role name="Role1" type="variable">dd1013#bi898</Role>
+                    </Roles>
+                </HistogramParm>
+                <ReferenceLine name="ReferenceLine_37" visible="true" tip="Role1 x" x_type="NUMERIC" x="1.30102999566398">
+                    <Roles>
+                        <Role name="Role1" type="numeric">0.05</Role>
+                    </Roles>
+                    <TipFormats>
+                        <TipFormat name="Role1">BEST7</TipFormat>
+                        <TipFormat name="x">BEST7</TipFormat>
+                    </TipFormats>
+                    <TipLabels>
+                        <TipLabel name="Role1">alpha</TipLabel>
+                        <TipLabel name="x">-log (alpha)</TipLabel>
+                    </TipLabels>
+                </ReferenceLine>
+            </LayoutOverlay>
+        </Cell>
+        <ColumnAxes>
+            <ColumnAxis display="LABEL TICKVALUES" gridDisplay="on" offsetMin="0">
+                <LinearOpts tickValueFormat="data">
+                    <TickValues>
+                        <Value>1</Value>
+                        <Value>2</Value>
+                        <Value>3</Value>
+                        <Value>4</Value>
+                        <Value>5</Value>
+                    </TickValues>
+                </LinearOpts>
+            </ColumnAxis>
+        </ColumnAxes>
+        <RowAxes>
+            <RowAxis display="TICKVALUES" reverse="true">
+                <DiscreteOpts tickValueFitPolicy="truncate" tickSpacing="22px"/>
+            </RowAxis>
+            <RowAxis display="NONE" label="hist"/>
+        </RowAxes>
+    </LayoutLattice>
+    <RangeAttrMap name="attrMap0">
+        <AttrRange minValue="0" minExclude="false" maxValue="1.30103" maxExclude="true" rangeColorModel="TwoColorRamp1"/>
+        <AttrRange minValue="1.30103" minExclude="false" maxValue="5.1" maxExclude="false" rangeColorModel="TwoColorRamp3"/>
+    </RangeAttrMap>
+    <RangeAttrVar attrVar="attrVar0" attrMap="attrMap0"/>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="logisticInfluence" resultDefinitions="dd1027" name="ve1032" data="dd872" label="Variable Selection" applyDynamicBrushes="no">
+			<Title><P><Span>Variable Selection Plot</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="SeriesPlot_21" data="dd1027"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay>
+        <SeriesPlot name="SeriesPlot_21" showMissingValuesInTips="false" display="MARKERS" tip="Role1 Role2 Role3 Role4 Role5 Role6 Role7 Role8 Role9 Role10 Role11 Role12 x" dataLabel="dd1027#bi945" x="dd1027#bi939">
+            <YVars>
+                <Value>dd1027#bi953</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd1027#bi953</Role>
+                <Role name="Role2" type="variable">dd1027#bi942</Role>
+                <Role name="Role3" type="variable">dd1027#bi943</Role>
+                <Role name="Role4" type="variable">dd1027#bi944</Role>
+                <Role name="Role5" type="variable">dd1027#bi940</Role>
+                <Role name="Role6" type="variable">dd1027#bi946</Role>
+                <Role name="Role7" type="variable">dd1027#bi947</Role>
+                <Role name="Role8" type="variable">dd1027#bi948</Role>
+                <Role name="Role9" type="variable">dd1027#bi950</Role>
+                <Role name="Role10" type="variable">dd1027#bi952</Role>
+                <Role name="Role11" type="variable">dd1027#bi954</Role>
+                <Role name="Role12" type="variable">dd1027#bi956</Role>
+            </Roles>
+        </SeriesPlot>
+        <XAxisOpts display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts integer="true">
+                <TickValueFormatOpts/>
+            </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts>
+                <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+    </LayoutOverlay>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="glmResidual" resultDefinitions="dd1473 dd1474" name="ve1036" data="dd1038" label="Residual" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="fitRoleFilter"></Property>
+			</EditorProperties>
+			<Title><P><Span>Residual Plot</Span></P></Title>
+<![CDATA[<StatGraph border="false" opaque="false">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="HeatmapParm" data="dd1473"/>
+            <Entry model="BinMetadata" data="dd1474"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay>
+        <HeatmapParm name="HeatmapParm" tipListPolicy="append" xBinAxis="false" yBinAxis="false" xBinSize="1" yBinSize="1" xGap="0px" yGap="0px" tipXBinStyle="range" tipYBinStyle="range" x="dd1473#bi1479" y="dd1473#bi1480" colorResponse="dd1473#bi1500" colorResponseAttrVar="attrVar0">
+            <BinMetadata name="BinMetadata" dataField="dd1474#bi1475" size="dd1474#bi1477" start="dd1474#bi1476" count="dd1474#bi1478"/>
+        </HeatmapParm>
+        <XAxisOpts type="linear" display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts>
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts type="linear" display="LABEL TICKVALUES" gridDisplay="on">
+            <LinearOpts centerOn="0">
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+    </LayoutOverlay>
+    <LayoutGlobalLegend border="false" hAlign="right" vAlign="center" legendTitlePosition="top" position="right" allowCollapsed="true">
+        <ContinuousLegend border="false" opaque="false" vAlign="bottom" valueStyle="inflections" displayMissing="automatic" extractScale="true" type="fillcolor">
+            <PadAttrs top="2px" bottom="2px" left="2px" right="2px"/>
+            <GraphNames>
+                <Value>HeatmapParm</Value>
+            </GraphNames>
+        </ContinuousLegend>
+    </LayoutGlobalLegend>
+    <RangeAttrMap name="attrMap0">
+        <AttrRange minValue="min" minExclude="false" maxValue="max" maxExclude="false" rangeColorModel="TwoColorRamp"/>
+    </RangeAttrMap>
+    <RangeAttrVar attrVar="attrVar0" attrMap="attrMap0"/>
+</StatGraph>]]>
+		</Graph>
+		<Graph graphType="glmAssessment" resultDefinitions="dd1425" name="ve1041" data="dd1043" label="Assessment" applyDynamicBrushes="no">
+			<EditorProperties>
+				<Property key="assessmentType">linear</Property>
+			</EditorProperties>
+			<Title><P><Span>Assessment</Span></P></Title>
+<![CDATA[<StatGraph opaque="false" selectionMode="multiple">
+    <PadAttrs top="0px" bottom="0px" left="0px" right="0px"/>
+    <Meta>
+        <DataNameMap>
+            <Entry model="LayoutOverlay_280" data="dd1425"/>
+        </DataNameMap>
+    </Meta>
+    <LayoutOverlay name="LayoutOverlay_280">
+        <SeriesPlot name="SeriesPlot_29" tip="x Role1 Role2" x="dd1425#bi1047" lineAttrs="GraphDataStyle1">
+            <YVars>
+                <Value>dd1425#bi1049</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd1425#bi1049</Role>
+                <Role name="Role2" type="variable">dd1425#bi1048</Role>
+            </Roles>
+            <LineAttrs/>
+        </SeriesPlot>
+        <SeriesPlot name="SeriesPlot_30" tip="x Role1 Role2" x="dd1425#bi1047" lineAttrs="GraphDataStyle2">
+            <YVars>
+                <Value>dd1425#bi1050</Value>
+            </YVars>
+            <Roles>
+                <Role name="Role1" type="variable">dd1425#bi1050</Role>
+                <Role name="Role2" type="variable">dd1425#bi1048</Role>
+            </Roles>
+            <LineAttrs/>
+        </SeriesPlot>
+        <YAxisOpts label="tgt Interval New Sales"/>
+    </LayoutOverlay>
+    <LayoutGlobalLegend border="false" legendTitlePosition="top" allowCollapsed="true">
+        <DiscreteLegend border="false" opaque="false" hAlign="left" vAlign="bottom">
+            <GraphNames>
+                <Value>SeriesPlot_29</Value>
+                <Value>SeriesPlot_30</Value>
+            </GraphNames>
+        </DiscreteLegend>
+    </LayoutGlobalLegend>
+</StatGraph>]]>
+		</Graph>
+		<Table columnSizing="autoFill" resultDefinitions="dd1025" name="ve1526" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi1007"/>
+				<Column variable="bi1008"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1019" name="ve1527" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi981"/>
+				<Column variable="bi982"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1020" name="ve1528" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi984"/>
+				<Column variable="bi985"/>
+				<Column variable="bi986"/>
+				<Column variable="bi987"/>
+				<Column variable="bi988"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1021" name="ve1529" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi990"/>
+				<Column variable="bi991"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1022" name="ve1530" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi993"/>
+				<Column variable="bi994"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1024" name="ve1531" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi1001"/>
+				<Column variable="bi1002"/>
+				<Column variable="bi1003"/>
+				<Column variable="bi1004"/>
+				<Column variable="bi1005"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1023" name="ve1532" data="dd872" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi996"/>
+				<Column variable="bi997"/>
+				<Column variable="bi998"/>
+				<Column variable="bi999"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1425" name="ve1533" data="dd1043" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi1047"/>
+				<Column variable="bi1048"/>
+				<Column variable="bi1049"/>
+				<Column variable="bi1050"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1427" name="ve1534" data="dd1043" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi1164"/>
+				<Column variable="bi1341"/>
+				<Column variable="bi1343"/>
+				<Column variable="bi1168"/>
+				<Column variable="bi1169"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd1429" name="ve1535" data="dd1043" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi1306"/>
+				<Column variable="bi1307"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd221" name="ve1975" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi187"/>
+				<Column variable="bi188"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd220" name="ve1976" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi179"/>
+				<Column variable="bi180"/>
+				<Column variable="bi181"/>
+				<Column variable="bi182"/>
+				<Column variable="bi183"/>
+				<Column variable="bi184"/>
+				<Column variable="bi185"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd222" name="ve1977" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi190"/>
+				<Column variable="bi191"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd225" name="ve1978" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi206"/>
+				<Column variable="bi207"/>
+				<Column variable="bi208"/>
+				<Column variable="bi209"/>
+				<Column variable="bi210"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd224" name="ve1979" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi200"/>
+				<Column variable="bi201"/>
+				<Column variable="bi202"/>
+				<Column variable="bi203"/>
+				<Column variable="bi204"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd226" name="ve1980" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi133"/>
+				<Column variable="bi134"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd227" name="ve1981" data="dd75" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi136"/>
+				<Column variable="bi137"/>
+				<Column variable="bi142"/>
+				<Column variable="bi144"/>
+				<Column variable="bi145"/>
+				<Column variable="bi146"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd656" name="ve1982" data="dd262" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi266"/>
+				<Column variable="bi267"/>
+				<Column variable="bi268"/>
+				<Column variable="bi269"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd658" name="ve1983" data="dd262" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi383"/>
+				<Column variable="bi560"/>
+				<Column variable="bi562"/>
+				<Column variable="bi387"/>
+				<Column variable="bi388"/>
+			</Columns>
+		</Table>
+		<Table columnSizing="autoFill" resultDefinitions="dd660" name="ve1984" data="dd262" applyDynamicBrushes="yes">
+			<Columns>
+				<Column variable="bi525"/>
+				<Column variable="bi526"/>
+			</Columns>
+		</Table>
+	</VisualElements>
+	<CompositeVisuals>
+		<CompositeVisual label="Linear regression - tgt Interval New Sales 1" type="linearRegressionContainer" supplementalVisuals="ve1975 ve1976 ve1977 ve1978 ve1979 ve1980 ve1981 ve1982 ve1983 ve1984" name="ve65">
+			<CompositeMember ref="ve67" role="supporting"/>
+			<CompositeMember ref="ve73" role="primary"/>
+			<CompositeMember ref="ve232" role="supporting"/>
+			<CompositeMember ref="ve255" role="supporting"/>
+			<CompositeMember ref="ve260" role="supporting"/>
+		</CompositeVisual>
+		<CompositeVisual label="Generalized linear model - tgt Interval New Sales 1" type="glmContainer" supplementalVisuals="ve1526 ve1527 ve1528 ve1529 ve1530 ve1531 ve1532 ve1533 ve1534 ve1535" name="ve862">
+			<CompositeMember ref="ve864" role="supporting"/>
+			<CompositeMember ref="ve870" role="primary"/>
+			<CompositeMember ref="ve1032" role="supporting"/>
+			<CompositeMember ref="ve1036" role="supporting"/>
+			<CompositeMember ref="ve1041" role="supporting"/>
+		</CompositeVisual>
+	</CompositeVisuals>
+	<View>
+		<Header>
+			<MediaContainer target="mt2">
+				<ResponsiveLayout orientation="horizontal" overflow="fit">
+					<Weights mediaTarget="mt5" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+					<Weights mediaTarget="mt4" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+					<Weights mediaTarget="mt3" unit="percent">
+						<Weight value="100%"/>
+					</Weights>
+				</ResponsiveLayout>
+			</MediaContainer>
+		</Header>
+		<Section name="vi6" label="Page 1">
+			<Header>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="horizontal" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+				</MediaContainer>
+			</Header>
+			<Body>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="vertical" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+					<Container ref="ve66" name="vi64">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+						<ResponsiveLayout orientation="vertical" overflow="fit">
+							<Weights mediaTarget="mt5" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+							<Weights mediaTarget="mt4" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+							<Weights mediaTarget="mt3" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+						</ResponsiveLayout>
+						<Visual ref="ve67" name="vi68">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="fixed"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+						</Visual>
+						<Container ref="ve69" name="vi70">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="flexible"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="flexible"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+							<ResponsiveLayout orientation="horizontal" overflow="stack">
+								<Weights mediaTarget="mt5" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt4" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt3" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+							</ResponsiveLayout>
+							<Visual ref="ve73" name="vi74">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve232" name="vi815"/>
+							<Visual ref="ve255" name="vi256">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve260" name="vi261">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+						</Container>
+					</Container>
+				</MediaContainer>
+			</Body>
+		</Section>
+		<Section name="vi860" label="Page 2">
+			<Header>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="horizontal" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+				</MediaContainer>
+			</Header>
+			<Body>
+				<MediaContainer target="mt2">
+					<ResponsiveLayout orientation="vertical" overflow="fit">
+						<Weights mediaTarget="mt5" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt4" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+						<Weights mediaTarget="mt3" unit="percent">
+							<Weight value="100%"/>
+						</Weights>
+					</ResponsiveLayout>
+					<Container ref="ve863" name="vi861">
+						<ResponsiveConstraint>
+							<WidthConstraint>
+								<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</WidthConstraint>
+							<HeightConstraint>
+								<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="shrinkable"/>
+							</HeightConstraint>
+						</ResponsiveConstraint>
+						<ResponsiveLayout orientation="vertical" overflow="fit">
+							<Weights mediaTarget="mt5" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+							<Weights mediaTarget="mt4" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+							<Weights mediaTarget="mt3" unit="percent">
+								<Weight value="100%"/>
+							</Weights>
+						</ResponsiveLayout>
+						<Visual ref="ve864" name="vi865">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="fixed"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+						</Visual>
+						<Container ref="ve866" name="vi867">
+							<ResponsiveConstraint>
+								<WidthConstraint>
+									<Width mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="flexible"/>
+								</WidthConstraint>
+								<HeightConstraint>
+									<Height mediaTarget="mt3" preferredSizeBehavior="honor" flexibility="flexible"/>
+								</HeightConstraint>
+							</ResponsiveConstraint>
+							<ResponsiveLayout orientation="horizontal" overflow="stack">
+								<Weights mediaTarget="mt5" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt4" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+								<Weights mediaTarget="mt3" unit="percent">
+									<Weight value="100%"/>
+								</Weights>
+							</ResponsiveLayout>
+							<Visual ref="ve870" name="vi871">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve1036" name="vi1037">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+							<Visual ref="ve1041" name="vi1042">
+								<ResponsiveConstraint>
+									<WidthConstraint>
+										<Width mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</WidthConstraint>
+									<HeightConstraint>
+										<Height mediaTarget="mt3" preferredSizeBehavior="ignore" flexibility="flexible"/>
+									</HeightConstraint>
+								</ResponsiveConstraint>
+							</Visual>
+						</Container>
+					</Container>
+				</MediaContainer>
+			</Body>
+		</Section>
+	</View>
+	<MediaSchemes>
+		<MediaScheme name="ms1">
+			<BaseStylesheetResource theme="opal"/>
+			<Stylesheet>
+<![CDATA[
+#ve67 .infoBarTextBold {
+  font-weight: bold;
+}
+#ve67 .infoBarTextUnderline {
+  text-decoration: underline;
+}
+#ve864 .infoBarTextTitle {
+  font-style: italic;
+}
+#ve1535 .Table {
+  display-opts: retainnewline;
+  wrap-text: normal;
+}
+#ve67 .infoBarTextTitle {
+  font-style: italic;
+}
+#ve864 .infoBarTextUnderline {
+  text-decoration: underline;
+}
+#ve864 .infoBarTextBold {
+  font-weight: bold;
+}
+#ve1984 .Table {
+  display-opts: retainnewline;
+  wrap-text: normal;
+}
+]]>
+			</Stylesheet>
+		</MediaScheme>
+	</MediaSchemes>
+	<MediaTargets>
+		<MediaTarget windowSize="default" scheme="ms1" name="mt2"/>
+		<MediaTarget windowSize="small" scheme="ms1" name="mt3"/>
+		<MediaTarget windowSize="medium" scheme="ms1" name="mt4"/>
+		<MediaTarget windowSize="large" scheme="ms1" name="mt5"/>
+	</MediaTargets>
+	<Properties>
+		<Property key="displayDataSource">ds7</Property>
+	</Properties>
+	<ExportProperties>
+		<Export destination="pdf">
+			<Property key="showCoverPage" value="true"></Property>
+			<Property key="showPageNumbers" value="true"></Property>
+		</Export>
+	</ExportProperties>
+	<History>
+		<Versions>
+			<Version key="4.5.0" lastDate="2021-07-13T10:43:19Z"/>
+		</Versions>
+		<Editors>
+			<Editor applicationName="VA">
+				<Revision editorVersion="2020" lastDate="2021-07-13T10:43:21.917Z"/>
+			</Editor>
+		</Editors>
+	</History>
+	<SASReportState>
+		<View/>
+	</SASReportState>
+</SASReport>
